@@ -1,19 +1,20 @@
 package com.example.sw_mini_project.Service;
 
 import com.example.sw_mini_project.Entity.Board;
+import com.example.sw_mini_project.Entity.Board_User;
 import com.example.sw_mini_project.controller.dto.BoardReqDto;
 import com.example.sw_mini_project.controller.dto.BoardResDto;
-import com.example.sw_mini_project.exception.CustomVaildationApiException;
 import com.example.sw_mini_project.repository.BoardRepository;
+import com.example.sw_mini_project.repository.Board_UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -21,6 +22,8 @@ import java.util.stream.Collectors;
 public class BoardService {
 
     private final BoardRepository boardRepository;
+
+    private final Board_UserRepository board_userRepository;
 
 
     @Transactional
@@ -44,32 +47,17 @@ public class BoardService {
         return pagingboard;
     }
 
-    @Transactional
-    public long board_register(long id) {
-        // 등록 시 해당하는 아아디를 찾고 등록인원 +1 시켜주는 로직
-        Board board = boardRepository.findById(id).orElseThrow(() -> {
-            return new CustomVaildationApiException("찾을 수 없는 Id입니다");
-        });
-        //아이디를 찾았으면 current_count에 +1을 해준다.
-        if (board.getId() != null) {
-            long new_cureent_count = board.getCurrent_count() + 1;
-            Board newBoard=new Board(
-                    board.getId(),
-                    board.getTitle(),
-                    board.getRevervation_Date(),
-                    board.getCategory(),
-                    board.getWriter(),
-                    board.getRegistrant_count(),
-                    new_cureent_count,
-                    board.getCreateDate()
-            );
-            Board save = boardRepository.save(newBoard);
-            return save.getId();
-        }else{
-            return 0;
+    public List<Board> getMypage(String name,Pageable pageable) {
+
+        List<Board_User> board_user = board_userRepository.findAllByName(name);
+        List<Board> list=new ArrayList<>();
+        for (Board_User boardUser : board_user) {
+            Long board_id = boardUser.getBoard().getId();
+            System.out.println(board_id);
+             Optional<Board> board = boardRepository.findById(board_id);
+             list.add(board.get());
         }
-
-
-
+        return list;
     }
+
 }

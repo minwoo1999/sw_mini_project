@@ -33,7 +33,7 @@ public class SwaggerConfig {  // Swagger
 
     public ApiInfo apiInfo() {  // API의 이름, 현재 버전, API에 대한 정보
         return new ApiInfoBuilder()
-                .title("JWT API Document")
+                .title("sw마에스트로 API Document")
                 .description("SwaggerConfig")
                 .version("3.0")
                 .build();

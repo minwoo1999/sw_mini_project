@@ -1,20 +1,19 @@
 package com.example.sw_mini_project.repository;
 
 import com.example.sw_mini_project.Entity.Board;
-import com.example.sw_mini_project.controller.dto.BoardReqDto;
+import com.example.sw_mini_project.Entity.Board_User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.lang.annotation.Native;
+import java.util.List;
 
-public interface BoardRepository extends JpaRepository<Board,Long> {
+public interface Board_UserRepository extends JpaRepository<Board_User,Long> {
 
-//    @Modifying //INSERT,DELETE,UPDATE 를 네이티브 쿼리로 작성하려면 해당 어노테이션이 필요함
-//    @Query(value="update board set current_count=current_count+1 where id= :id)",nativeQuery = true)
-//    Integer board_register(long id);
-
-
+    Board_User findByNameAndBoard_Id(String name,long board_id);
+    List<Board_User> findAllByName(String name);
 }
