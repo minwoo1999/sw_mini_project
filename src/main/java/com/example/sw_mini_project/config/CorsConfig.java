@@ -20,7 +20,7 @@ public class CorsConfig {
         config.addAllowedHeader("*"); //모든 header 에 응답을 허용하겠다
         config.addAllowedMethod("*"); //모든 post get put delete patch 를 허용하겠다.
 
-        source.registerCorsConfiguration("/api/**", config);
+        source.registerCorsConfiguration("/board/**", config);
         return new CorsFilter(source);
     }
 
