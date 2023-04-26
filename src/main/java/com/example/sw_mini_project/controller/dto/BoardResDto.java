@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 
@@ -21,7 +22,7 @@ public class BoardResDto {
 
     private long registrant_count;
 
-    private Date reveration_date;
+    private String reveration_date;
 
     private long current_count;
 

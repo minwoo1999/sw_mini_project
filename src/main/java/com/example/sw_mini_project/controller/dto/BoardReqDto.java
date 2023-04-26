@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -20,7 +22,7 @@ public class BoardReqDto {
 
     private long registrant_count;
 
-    private Date reveration_date;
+    private String reveration_date;
     @NotNull
     @NotBlank
     private String title;
