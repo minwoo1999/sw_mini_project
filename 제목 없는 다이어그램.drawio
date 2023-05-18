@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-18T13:14:11.066Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="cuvwThMFXsiPAi95poU8" version="21.3.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-18T13:14:40.785Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="METXZ1ZlwNrk2Qgp7ON7" version="21.3.2" type="github">
   <diagram name="페이지-1" id="giBCQDRy0tIcnZJqyviJ">
     <mxGraphModel dx="1487" dy="739" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -18,7 +18,7 @@
         </mxCell>
         <UserObject label="" id="QBiDkqyLC_gtFL6pFu3h-16">
           <mxCell style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_vpc;strokeColor=#248814;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#AAB7B8;dashed=0;" vertex="1" parent="1">
-            <mxGeometry x="100" y="310" width="730" height="780" as="geometry" />
+            <mxGeometry x="100" y="310" width="670" height="730" as="geometry" />
           </mxCell>
         </UserObject>
         <mxCell id="QBiDkqyLC_gtFL6pFu3h-54" value="Private subnet a2" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#147EBA;fillColor=#E6F2F8;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=0;" vertex="1" parent="QBiDkqyLC_gtFL6pFu3h-16">
